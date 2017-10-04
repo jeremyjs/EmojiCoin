@@ -52,7 +52,7 @@ div.page {
       width: 100%;
       max-width: 280px;
       background: white;
-      border-radius: 25px;
+      border-radius: 5px;
       padding: 10px; }
       div.page div.form-column div.form input {
         border: none;

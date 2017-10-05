@@ -2,33 +2,29 @@ pragma solidity ^0.4.2;
 
 import "./ConvertLib.sol";
 
-// This is just a simple example of a coin-like contract.
-// It is not standards compatible and cannot be expected to talk to other
-// coin/token contracts. If you want to create a standards-compliant
-// token, see: https://github.com/ConsenSys/Tokens. Cheers!
-
 contract EmojiCoin {
-	mapping (address => uint) balances;
+
+	address ChrisCates;
+
+	mapping (address => mapping(uint => uint)) accounts;
 
 	event Transfer(address indexed _from, address indexed _to, uint256 _value);
 
-	function EmojiCoin() {
-		balances[tx.origin] = 1000000;
+	function EmojiCoin() public {
+		accounts[ChrisCates][0] = 10000000;
+		accounts[ChrisCates][1] = 10000000;
+		accounts[ChrisCates][2] = 10000000;
 	}
 
-	function sendCoin(address receiver, uint amount) returns(bool sufficient) {
-		if (balances[msg.sender] < amount) return false;
-		balances[msg.sender] -= amount;
-		balances[receiver] += amount;
+	function sendCoin(address receiver, uint amount, uint index) returns(bool sufficient) {
+		if (accounts[msg.sender][index] < amount) return false;
+		accounts[msg.sender][index] -= amount;
+		accounts[receiver][index] += amount;
 		Transfer(msg.sender, receiver, amount);
 		return true;
 	}
 
-	function getBalanceInEth(address addr) returns(uint){
-		return ConvertLib.convert(getBalance(addr),2);
-	}
-
-	function getBalance(address addr) returns(uint) {
-		return balances[addr];
+	function getBalances(address addr, uint index) constant returns(uint) {
+		return accounts[addr][index];
 	}
 }

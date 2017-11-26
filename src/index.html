@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Emojicoin</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS defining icons (required) -->
+  <link rel="stylesheet" href="/assets/webfont/cryptocoins.css">
+
+  <!-- CSS defining icon/coin colors (optional) -->
+  <link rel="stylesheet" href="/assets/webfont/cryptocoins-colors.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="/assets/web3.min.js"></script>
+  <script>
+  if (typeof web3 !== 'undefined') {
+    web3 = new Web3(new Web3.providers.HttpProvider("http://159.203.39.191:8545"));
+  } else {
+    // set the provider you want from Web3.providers
+    web3 = new Web3(new Web3.providers.HttpProvider("http://159.203.39.191:8545"));
+  }
+  </script>
+  <script src="/assets/lightwallet.min.js"></script>
+  <script src="/assets/my-wallet.js"></script>
+</head>
+<body>
+  <app-root>
+    <div class="container">
+
+    </div>
+  </app-root>
+</body>
+</html>

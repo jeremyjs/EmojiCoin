@@ -1,0 +1,27 @@
+<app-header></app-header>
+<article>
+  <div class="bubble qr">
+    <h2>Receive Emojicoins / Ether</h2>
+    <ngx-qrcode
+        qrc-element-type="url"
+        [qrc-value] = "user.public_address"
+        qrc-errorCorrectionLevel = "L"></ngx-qrcode>
+
+    <p class="public_address">
+      <span>0x2312312323kk30x2312312323kk3</span>
+      <i class="fa fa-clipboard"></i>
+    </p>
+
+    <h2 class="balance"><span>1000 EMOJI</span> <span><i class="cc ETH"></i> 1 ETH</span></h2>
+    <p class="link">Get 100 ETH from the dispensary</p>
+  </div>
+  <div class="bubble">
+    <h2>Send to an ETH Address</h2>
+    <input type="text" placeholder="Public Address"/>
+    <h2>Send amount in EMOJI</h2>
+    <input type="text" placeholder="Amount in EMOJI"/>
+    <h2>Send amount in ETH</h2>
+    <input type="text" placeholder="Amount in ETH"/>
+    <button>SEND</button>
+  </div>
+</article>

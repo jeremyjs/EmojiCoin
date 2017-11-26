@@ -1,0 +1,60 @@
+<app-header></app-header>
+<article>
+  <div class="bubble qr">
+    <h2>Send 1 Ethereum to this address for 100 000 EMOJIs</h2>
+    <ngx-qrcode
+        qrc-element-type="url"
+        [qrc-value] = "user.public_address"
+        qrc-errorCorrectionLevel = "L"></ngx-qrcode>
+
+    <p class="public_address">
+      <span>0x2312312323kk30x2312312323kk3</span>
+      <i class="fa fa-clipboard"></i>
+    </p>
+
+    <h2 class="balance"><span>1000 EMOJI</span> <span><i class="cc ETH"></i> 1 ETH</span></h2>
+    <p class="link">Get 100 ETH from the dispensary</p>
+  </div>
+  <div class="bubble">
+    <h2>Your Emojis</h2>
+    <div class="catalogue">
+      <a>
+        <span class="emoji">
+          💩
+        </span>
+        <span class="details">
+          <p>You have 1</p>
+        </span>
+      </a>
+    </div>
+  </div>
+  <div class="bubble">
+    <h2>Exchange EMOJI for Emojis</h2>
+    <div class="catalogue">
+      <a>
+        <span class="emoji">
+          💩
+        </span>
+        <span class="details">
+          <p>500 left</p>
+          <p>5 EMOJI</p>
+        </span>
+        <button>
+          BUY
+        </button>
+      </a>
+      <a>
+        <span class="emoji">
+          🙏
+        </span>
+        <span class="details">
+          <p>1000 left</p>
+          <p>2.5 EMOJI</p>
+        </span>
+        <button>
+          BUY
+        </button>
+      </a>
+    </div>
+  </div>
+</article>

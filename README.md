@@ -1,29 +1,28 @@
-# truffle-init-webpack
-Example webpack project with Truffle. Includes contracts, migrations, tests, user interface and webpack build pipeline.
+# EmojiCoin
 
-## Usage
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
 
-To initialize a project with this example, run `truffle init webpack` inside an empty directory.
+## Development server
 
-## Building and the frontend
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-1. First run `truffle compile`, then run `truffle migrate` to deploy the contracts onto your network of choice (default "development").
-1. Then run `npm run dev` to build the app and serve it on http://localhost:8080
+## Code scaffolding
 
-## Possible upgrades
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-* Use the webpack hotloader to sense when contracts or javascript have been recompiled and rebuild the application. Contributions welcome!
+## Build
 
-## Common Errors
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-* **Error: Can't resolve '../build/contracts/MetaCoin.json'**
+## Running unit tests
 
-This means you haven't compiled or migrated your contracts yet. Run `truffle compile` and `truffle migrate` first.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Full error:
+## Running end-to-end tests
 
-```
-ERROR in ./app/main.js
-Module not found: Error: Can't resolve '../build/contracts/MetaCoin.json' in '/Users/tim/Documents/workspace/Consensys/test3/app'
- @ ./app/main.js 11:16-59
-```
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `ng serve`.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

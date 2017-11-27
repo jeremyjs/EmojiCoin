@@ -1,4 +1,5 @@
 export IntroButton from './IntroButton'
+export IntroView from './IntroView'
 export SubTitle from './SubTitle'
 export Subtle from './Subtle'
 export Title from './Title'

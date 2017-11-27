@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native'
 import { IntroButton, Title, Subtle, SubTitle } from '../components'
 
 const IntroView = (props) => (
-  <Container>
+  <Container style={styles.container}>
     <Content padder contentContainerStyle={styles.contentContainer}>
       <Title>
         emoji 😍 <Subtle>coin</Subtle>
@@ -12,7 +12,11 @@ const IntroView = (props) => (
       <SubTitle>
         Welcome to the future of cryptocurrency
       </SubTitle>
-      <IntroButton warning block textColor='white'>
+      <IntroButton
+        warning block
+        textColor='white'
+        onPress={() => props.navigation.navigate('PhraseView')}
+      >
         Create Wallet
       </IntroButton>
       <IntroButton dark bordered block>
@@ -23,6 +27,9 @@ const IntroView = (props) => (
 )
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+  },
   contentContainer: {
     flex: 1,
     backgroundColor: 'white',

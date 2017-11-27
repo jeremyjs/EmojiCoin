@@ -1,3 +1,4 @@
+export AppRoot from './AppRoot'
 export IntroButton from './IntroButton'
 export IntroView from './IntroView'
 export SubTitle from './SubTitle'

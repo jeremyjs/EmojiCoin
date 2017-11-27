@@ -2,7 +2,7 @@ import React from 'react'
 import { AppLoading, Font } from 'expo'
 import { StyleProvider } from 'native-base';
 import getTheme from './native-base-theme/components'
-import { IntroView } from './components'
+import { AppRoot } from './components'
 
 class App extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class App extends React.Component {
     return (
       <StyleProvider style={getTheme()}>
         {this.state.areFontsLoaded ?
-          <IntroView />
+          <AppRoot />
         :
           <AppLoading />
         }

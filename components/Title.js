@@ -1,9 +1,9 @@
 import React from 'react'
 import { StyleSheet, Text } from 'react-native'
 
-const Title = (props) => (
-  <Text style={[styles.title, props.style]}>
-    {props.children}
+const Title = ({ children, style, ...props }) => (
+  <Text style={[styles.title, style]} {...props}>
+    {children}
   </Text>
 )
 

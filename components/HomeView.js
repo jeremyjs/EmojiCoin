@@ -16,7 +16,7 @@ const MainNavigator = TabNavigator(
     SettingsView: { screen: SettingsView },
   },
   {
-    initialRouteName: 'EmojisView',
+    initialRouteName: 'SendView',
     tabBarPosition: 'bottom',
   }
 )

@@ -1,36 +1,16 @@
 import React from 'react'
-import { Badge, Body, Button, Container, Content, Icon, Image, Input, Item, List, ListItem, Right, Text, Thumbnail } from 'native-base';
+import { Container, Content, List, Text } from 'native-base';
 import { StyleSheet } from 'react-native'
-import { IntroButton, SubTitle, Title } from '../components'
-import { Col, Row, Grid } from 'react-native-easy-grid'
+import { EmojiListItem, EmojiForSaleListItem, Title } from '../components'
 
-const Emoji = ({ amount, emoji, ...props }) => (
-  <Item>
-    <Text style={styles.emojiText}>{emoji}</Text>
-    <Badge><Text>{amount}</Text></Badge>
-  </Item>
-)
+const $lightGray = '#e7e7e7'
 
-const EmojiForSale = ({ amountRemaining, emoji, price }) => (
-  <ListItem style={styles.emojiSaleListItem}>
-    <Thumbnail square>
-      <Text style={styles.emojiText}>{emoji}</Text>
-    </Thumbnail>
-    <Body>
-      <Text>Price: {price} EMOJI</Text>
-      <Text note>{amountRemaining} Remaining</Text>
-    </Body>
-    <Button style={styles.emojiSaleButton}>
-      <Text>
-        Buy
-      </Text>
-    </Button>
-  </ListItem>
-)
+const sendViewTitle = 'Emojis'
+const sendViewEmoji = '💩'
 
 const navigationOptions = {
-  tabBarLabel: 'Emojis',
-  tabBarIcon: (props) => (<Text>💩</Text>),
+  tabBarLabel: sendViewTitle,
+  tabBarIcon: (props) => (<Text {...props}>{sendViewEmoji}</Text>),
 }
 
 class EmojisView extends React.Component {
@@ -38,37 +18,30 @@ class EmojisView extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = {
-      inputText: '',
-    }
-    this.onInput.bind(this)
-    this.setState.bind(this)
   }
 
-  onInput (newText) {
-    this.setState({ inputText: newText })
-  }
-
-  render (state) {
-    const props = this.props
-
+  render () {
     return (
       <Container style={styles.container}>
         <Content padder contentContainerStyle={styles.contentContainer}>
           <Title> My Emojis 💩 </Title>
           <List style={styles.emojisList}>
-            <Emoji emoji='💩' amount={1} />
-            <Emoji emoji='💩' amount={1} />
-            <Emoji emoji='💩' amount={1} />
-            <Emoji emoji='💩' amount={1} />
-            <Emoji emoji='💩' amount={1} />
-            <Emoji emoji='💩' amount={1} />
-            <Emoji emoji='💩' amount={1} />
+            <EmojiListItem emoji='💩' amount={1} />
+            <EmojiListItem emoji='💩' amount={1} />
+            <EmojiListItem emoji='💩' amount={1} />
+            <EmojiListItem emoji='💩' amount={1} />
+            <EmojiListItem emoji='💩' amount={1} />
+            <EmojiListItem emoji='💩' amount={1} />
+            <EmojiListItem emoji='💩' amount={1} />
           </List>
 
           <Title> Emoji Store 🕴️ </Title>
           <List style={styles.emojiSaleList}>
-            <EmojiForSale amountRemaining={1000} emoji='💩' price={500} />
+            <EmojiForSaleListItem amountRemaining={1000} emoji='💩' price={500} />
+            <EmojiForSaleListItem amountRemaining={1000} emoji='💩' price={500} />
+            <EmojiForSaleListItem amountRemaining={1000} emoji='💩' price={500} />
+            <EmojiForSaleListItem amountRemaining={1000} emoji='💩' price={500} />
+            <EmojiForSaleListItem amountRemaining={1000} emoji='💩' price={500} />
           </List>
         </Content>
       </Container>
@@ -77,42 +50,23 @@ class EmojisView extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  myEmojisItem: {
-    backgroundColor: '#e7e7e7',
-  },
-  emojiText: {
-    fontSize: 48,
-    marginRight: -2,
-    marginTop: -2,
-  },
-  emojiAmountText: {
-    fontSize: 18,
-  },
-  emojiSaleButton: {
-    marginTop: 5,
-    marginRight: 3,
-  },
-  emojiSaleListItem: {
-    backgroundColor: 'white',
-    marginLeft: 0,
-    paddingLeft: 14,
-  },
   emojiSaleList: {
-    marginTop: 20,
+    marginBottom: 20,
     marginLeft: 0,
+    marginTop: 20,
     paddingLeft: 0,
   },
   emojisList: {
-    marginTop: 20,
-    marginBottom: 40,
     flexDirection: 'row',
     flexWrap: 'wrap',
+    marginBottom: 40,
+    marginTop: 20,
   },
   container: {
-    backgroundColor: '#e7e7e7',
+    backgroundColor: $lightGray,
   },
   contentContainer: {
-    backgroundColor: '#e7e7e7',
+    backgroundColor: $lightGray,
     paddingTop: 20,
   },
 })

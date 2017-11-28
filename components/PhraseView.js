@@ -1,7 +1,10 @@
 import React from 'react'
-import { Button, Container, Content, Icon, Text } from 'native-base';
+import { Container, Content, Text } from 'native-base';
 import { StyleSheet } from 'react-native'
 import { IntroButton, SubTitle, Title } from '../components'
+
+const $white = 'white'
+const $gray = '#ccc'
 
 const PhraseView = (props) => (
   <Container style={styles.container}>
@@ -14,14 +17,15 @@ const PhraseView = (props) => (
         Backup Phrase
       </Title>
       <SubTitle style={styles.subtitle}>
-        Write it down and keep it somewhere safe! If you lose this, you won't be able to recover your wallet.
+        Write it down and keep it somewhere safe! If you lose this, you won't be
+        able to recover your wallet.
       </SubTitle>
       <Text style={styles.backupPhrase}>
         yo i got the fat weed pass phrase
       </Text>
       <IntroButton
         danger block
-        textColor='white'
+        textColor={$white}
         onPress={() => props.navigation.navigate('PhraseConfirmView')}
       >
         I wrote it down.
@@ -38,7 +42,7 @@ const PhraseView = (props) => (
 
 const styles = StyleSheet.create({
   backupPhrase: {
-    backgroundColor: '#ccc',
+    backgroundColor: $gray,
     borderRadius: 5,
     fontSize: 24,
     marginBottom: 40,
@@ -46,11 +50,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   container: {
-    backgroundColor: 'white',
+    backgroundColor: $white,
   },
   contentContainer: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: $white,
     alignItems: 'center',
     justifyContent: 'center',
   },

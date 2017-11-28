@@ -3,6 +3,8 @@ import { Container, Content } from 'native-base';
 import { StyleSheet } from 'react-native'
 import { IntroButton, Title, Subtle, SubTitle } from '../components'
 
+const $white = 'white'
+
 const IntroView = (props) => (
   <Container style={styles.container}>
     <Content padder contentContainerStyle={styles.contentContainer}>
@@ -28,11 +30,11 @@ const IntroView = (props) => (
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: $white,
   },
   contentContainer: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: $white,
     alignItems: 'center',
     justifyContent: 'center',
   },

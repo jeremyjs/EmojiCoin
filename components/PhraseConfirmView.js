@@ -1,7 +1,9 @@
 import React from 'react'
-import { Button, Container, Content, Icon, Input, Item, Text } from 'native-base'
+import { Container, Content, Icon, Input, Item, Text } from 'native-base'
 import { StyleSheet } from 'react-native'
 import { IntroButton, SubTitle, Title } from '../components'
+
+const $white = 'white'
 
 const statusIconMap = {
   none: null,
@@ -32,7 +34,7 @@ class PhraseConfirmView extends React.Component {
     if (normalizedText === secretPhrase) {
       this.setState({ isPhraseInputEditable: false })
       this.setState({ phraseInputStatus: 'success' })
-      window.setTimeout(() => this.props.navigation.navigate('HomeView'), 1500)
+      window.setTimeout(() => this.props.navigation.navigate('MainNavigator'), 1500)
       return
     }
 
@@ -44,7 +46,7 @@ class PhraseConfirmView extends React.Component {
     this.setState({ phraseInputStatus: 'none' })
   }
 
-  render (props) {
+  render () {
     return (
       <Container style={styles.container}>
         <Content padder contentContainerStyle={styles.contentContainer}>
@@ -86,20 +88,12 @@ class PhraseConfirmView extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  backupPhrase: {
-    backgroundColor: '#ccc',
-    borderRadius: 5,
-    fontSize: 24,
-    marginBottom: 40,
-    padding: 23,
-    textAlign: 'center',
-  },
   container: {
-    backgroundColor: 'white',
+    backgroundColor: $white,
   },
   contentContainer: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: $white,
     alignItems: 'center',
     justifyContent: 'center',
   },

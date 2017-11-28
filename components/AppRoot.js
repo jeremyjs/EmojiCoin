@@ -6,17 +6,17 @@ import { StackNavigator } from 'react-navigation'
 import IntroView from './IntroView'
 import PhraseView from './PhraseView'
 import PhraseConfirmView from './PhraseConfirmView'
-import MainNavigator from './HomeView'
+import MainNavigator from './MainNavigator'
 
 const AppNavigator = StackNavigator(
   {
     IntroView: { screen: IntroView },
     PhraseView: { screen: PhraseView },
     PhraseConfirmView: { screen: PhraseConfirmView },
-    HomeView: { screen: MainNavigator },
+    MainNavigator: { screen: MainNavigator },
   },
   {
-    initialRouteName: 'IntroView',
+    initialRouteName: 'MainNavigator', // TODO: IntroView
     headerMode: 'none',
   }
 )

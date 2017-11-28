@@ -1,24 +1,36 @@
 import React from 'react'
-import { Button, Footer, FooterTab, Text } from 'native-base';
+import { Container, Content } from 'native-base';
 import { StyleSheet } from 'react-native'
-import { TabNavigator } from 'react-navigation'
+import { Title } from '../components'
 
-import SendView from './SendView'
-import ReceiveView from './ReceiveView'
-import EmojisView from './EmojisView'
-import SettingsView from './SettingsView'
+const $lightGray = '#e7e7e7'
 
-const MainNavigator = TabNavigator(
-  {
-    SendView: { screen: SendView },
-    ReceiveView: { screen: ReceiveView },
-    EmojisView: { screen: EmojisView },
-    SettingsView: { screen: SettingsView },
-  },
-  {
-    initialRouteName: 'SendView',
-    tabBarPosition: 'bottom',
-  }
+const HomeView = ({ title, children, ...props }) => (
+  <Container style={homeStyles.container} {...props}>
+    <Title style={homeStyles.title}>
+      {title}
+    </Title>
+    <Content padder contentContainerStyle={homeStyles.contentContainer}>
+      {children}
+    </Content>
+  </Container>
 )
 
-export default MainNavigator
+const homeStyles = StyleSheet.create({
+  container: {
+    backgroundColor: $lightGray,
+  },
+  contentContainer: {
+    flex: 1,
+    backgroundColor: $lightGray,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    textAlign: 'center',
+    marginTop: 80,
+    marginBottom: 40,
+  },
+})
+
+export default HomeView

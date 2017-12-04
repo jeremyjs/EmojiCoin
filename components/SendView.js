@@ -1,7 +1,13 @@
 import React from 'react'
-import { Input, Item, Picker, Text } from 'native-base';
+import { Button, Icon, Input, Item, Picker, Text } from 'native-base';
 import { StyleSheet } from 'react-native'
 import { HomeView, IntroButton } from '../components'
+
+import { updateSendWalletAddress } from '../redux/actions'
+import store from '../redux/store'
+
+const $lightGray = '#e7e7e7'
+const $black = 'black'
 
 const sendViewTitle = 'Send'
 const sendViewEmoji = '💸'
@@ -21,12 +27,30 @@ class SendView extends React.Component {
       amount: '',
       currency: 'EMOJI',
     }
-    this.onInput.bind(this)
     this.setState.bind(this)
   }
 
-  onInput (newText) {
-    this.setState({ inputText: newText })
+  onInputWalletAddress (newText) {
+    this.setState({ walletAddress: newText })
+    store.dispatch(updateSendWalletAddress(newText))
+  }
+
+  onInputAmount (newAmount) {
+    this.setState({ amount: newAmount })
+  }
+
+  onPressQrButton () {
+    this.props.navigation.navigate('ScanQrCodeView')
+  }
+
+  onStoreUpdate () {
+    const state = store.getState()
+    const { sendWalletAddress } = state
+    this.setState({ walletAddress: sendWalletAddress })
+  }
+
+  componentWillMount () {
+    store.subscribe(this.onStoreUpdate.bind(this))
   }
 
   render () {
@@ -38,16 +62,27 @@ class SendView extends React.Component {
           <Input
             autoCapitalize={'none'}
             autoCorrect={false}
-            onChangeText={this.onInput.bind(this)}
+            onChangeText={this.onInputWalletAddress.bind(this)}
             placeholder='0x123123123123123123123123'
+            value={this.state.walletAddress}
             style={styles.walletAddressInput}
           />
+          <Button
+            onPress={this.onPressQrButton.bind(this)}
+            style={styles.iconButton}
+          >
+            <Icon
+              active
+              style={styles.iconButtonIcon}
+              name='ios-qr-scanner'
+            />
+          </Button>
         </Item>
         <Item style={styles.amountInputItem}>
           <Input
             autoCapitalize={'none'}
             autoCorrect={false}
-            onChangeText={this.onInput.bind(this)}
+            onChangeText={this.onInputAmount.bind(this)}
             placeholder='0000.00'
             style={styles.amountInput}
           />
@@ -79,6 +114,12 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 20,
     marginBottom: 40,
+  },
+  iconButton: {
+    backgroundColor: $lightGray,
+  },
+  iconButtonIcon: {
+    color: $black,
   },
   walletAddressInputItem: {
     marginBottom: 40,

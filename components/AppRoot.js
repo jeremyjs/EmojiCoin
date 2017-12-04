@@ -7,6 +7,7 @@ import IntroView from './IntroView'
 import PhraseView from './PhraseView'
 import PhraseConfirmView from './PhraseConfirmView'
 import MainNavigator from './MainNavigator'
+import ScanQrCodeView from './ScanQrCodeView'
 
 const AppNavigator = StackNavigator(
   {
@@ -14,6 +15,7 @@ const AppNavigator = StackNavigator(
     PhraseView: { screen: PhraseView },
     PhraseConfirmView: { screen: PhraseConfirmView },
     MainNavigator: { screen: MainNavigator },
+    ScanQrCodeView: { screen: ScanQrCodeView },
   },
   {
     initialRouteName: 'MainNavigator',

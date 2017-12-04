@@ -43,13 +43,17 @@ const styles = StyleSheet.create({
     height: 256,
     width: 256,
     marginBottom: 40,
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   subTitle: {
     paddingLeft: 20,
     paddingRight: 20,
+    textAlign: 'center',
   },
   walletAddress: {
     marginBottom: 20,
+    textAlign: 'center',
   }
 })
 

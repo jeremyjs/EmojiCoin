@@ -1,6 +1,6 @@
 import React from 'react'
-import { Container, Content, List, Text } from 'native-base';
-import { StyleSheet } from 'react-native'
+import { Container, Content, List, Text, View } from 'native-base';
+import { ScrollView, StyleSheet } from 'react-native'
 import { EmojiListItem, EmojiForSaleListItem, Title } from '../components'
 
 const $lightGray = '#e7e7e7'

@@ -16,7 +16,7 @@ const AppNavigator = StackNavigator(
     MainNavigator: { screen: MainNavigator },
   },
   {
-    initialRouteName: 'IntroView',
+    initialRouteName: 'MainNavigator',
     headerMode: 'none',
   }
 )
